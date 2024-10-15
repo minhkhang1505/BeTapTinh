@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bé tập tính</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <h1>Bé tập tính</h1>  
+  </head>
+  <body>
+    <script src="./script.js"></script>
+    <div class="form-container">
+      <div class="form-row">
+        <label for="number1">Số thứ nhất</label>
+        <input type="text" id="number1" />
+        <input type="radio" name="operation" value="add" id="add" />
+        <label for="add">Cộng</label>
+        <input type="radio" name="operation" value="subtract" id="subtract" />
+        <label for="subtract">Trừ</label>
+      </div>
+
+      <div class="form-row">
+        <label for="number2">Số thứ hai</label>
+        <input type="text" id="number2" />
+        <input type="radio" name="operation" value="mul" id="mul" />
+        <label for="mul">Nhân</label>
+        <input type="radio" name="operation" value="divide" id="divide" />
+        <label for="divide">Chia</label>
+      </div>
+
+      <div class="form-row">
+        <label for="text">Kết quả</label>
+        <input type="number" id="result" readonly />
+        <button id="btnCalc" onclick="calculate()">Tính</button>
+      </div>
+
+      <div id="message">
+        <div>Thông báo</div>
+      </div>
+    </div>
+  </body>
+</html>
