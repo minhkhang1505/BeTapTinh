@@ -1,40 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bé tập tính</title>
-    <link rel="stylesheet" type="text/css" href="./css/style.css" />
-    <h1>Bé tập tính</h1>  
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
   </head>
-  <body>
-    <script src="./script.js"></script>
-    <div class="form-container">
-      <div class="form-row">
-        <label for="number1">Số thứ nhất</label>
-        <input type="text" id="number1" />
-        <input type="radio" name="operation" value="add" id="add" />
-        <label for="add">Cộng</label>
-        <input type="radio" name="operation" value="subtract" id="subtract" />
-        <label for="subtract">Trừ</label>
-      </div>
+  <body class=" flex h-screen">
+    <div class=" p-6 rounded-lg  max-w-2xl w-full">
+      <h1 class="text-3xl font-bold mb-6">Bé tập tính</h1>
+      <div class="space-y-4">
+        <!-- Số thứ nhất và Cộng/Trừ -->
+        <div class="grid grid-cols-5 items-center gap-4">
+          <label for="number1" class="col-span-1">Số thứ nhất</label>
+          <input
+            type="text"
+            class="col-span-3 border border-gray-300 rounded py-2 px-4 w-full"
+            id="number1"
+          />
+          <div class="col-span-1 flex space-x-2">
+            <div>
+              <input type="radio" name="operation" value="add" id="add" />
+              <label for="add">Cộng</label>
+            </div>
+            <div>
+              <input type="radio" name="operation" value="subtract" id="subtract" />
+              <label for="subtract">Trừ</label>
+            </div>
+          </div>
+        </div>
 
-      <div class="form-row">
-        <label for="number2">Số thứ hai</label>
-        <input type="text" id="number2" />
-        <input type="radio" name="operation" value="mul" id="mul" />
-        <label for="mul">Nhân</label>
-        <input type="radio" name="operation" value="divide" id="divide" />
-        <label for="divide">Chia</label>
-      </div>
+        <!-- Số thứ hai và Nhân/Chia -->
+        <div class="grid grid-cols-5 items-center gap-4">
+          <label for="number2" class="col-span-1">Số thứ hai</label>
+          <input
+            type="text"
+            class="col-span-3 border border-gray-300 rounded py-2 px-4 w-full"
+            id="number2"
+          />
+          <div class="col-span-1 flex items-center space-x-2">
+            <div class="flex items-center space-x-1">
+              <input type="radio" name="operation" value="mul" id="mul" />
+              <label for="mul">Nhân</label>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="radio" name="operation" value="divide" id="divide" />
+              <label for="divide">Chia</label>
+            </div>
+          </div>
+        </div>
 
-      <div class="form-row">
-        <label for="text">Kết quả</label>
-        <input type="number" id="result" readonly />
-        <button id="btnCalc" onclick="calculate()">Tính</button>
-      </div>
-
-      <div id="message">
-        <div>Thông báo</div>
+        <!-- Kết quả và Nút Tính -->
+        <div class="grid grid-cols-5 items-center gap-4">
+          <label for="result" class="col-span-1">Kết quả</label>
+          <input
+            type="number"
+            class="col-span-3 border border-gray-300 rounded py-2 px-4 w-full"
+            id="result"
+            readonly
+          />
+          <button
+            class="bg-gray-300 text-black font-bold rounded py-2 px-4 col-span-1"
+            id="btnCalc"
+            onclick="calculate()"
+          >
+            Tính
+          </button>
+        </div>
+        
+        <div class="grid grid-cols-2 gap-4">
+          <p>Thông báo: </p>
+          <div id="message" class="text-red-500 font-semibold mt-4">
+        </div>
+        </div>
+        
       </div>
     </div>
+    <script src="./script.js"></script>
   </body>
 </html>

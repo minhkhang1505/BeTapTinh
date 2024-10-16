@@ -1,12 +1,10 @@
 // Hàm kiểm tra số hợp lệ
 function isValidNumber(value) {
-  const regex = /^-?\d+(\.\d+)?$/; // Biểu thức chính quy kiểm tra chuỗi chỉ chứa số thực hợp lệ
-  return regex.test(value);
+  return !isNaN(value); // isNaN sẽ trả về false nếu là số hợp lệ, kể cả dạng 2e-12
 }
 
 function calculate() {
   const number1 = parseFloat(document.getElementById("number1").value);
-  console.log(number1);
   const number2 = parseFloat(document.getElementById("number2").value);
   const operation = document.querySelector('input[name="operation"]:checked');
   const resultField = document.getElementById("result");
@@ -46,7 +44,7 @@ function calculate() {
         }
         break;
     }
-    resultField.value = result; // Hiển thị kết quả trong ô input
+    resultField.value = result.toFixed(2); // Hiển thị kết quả trong ô input
     message.innerHTML = "";
   } else {
     message.innerHTML = "Vui lòng chọn phép tính!";
