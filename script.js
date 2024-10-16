@@ -13,6 +13,11 @@ function calculate() {
   let result = null;
 
   // Kiểm tra người dùng có nhập số hợp lệ hay không
+  if ((operation && !isValidNumber(number1)) || !isValidNumber(number2)) {
+    message.innerHTML = "Vui lòng nhập số cần tính!";
+    resultField.value = "";
+    return;
+  }
   if (
     !isValidNumber(document.getElementById("number1").value) ||
     !isValidNumber(document.getElementById("number2").value)
